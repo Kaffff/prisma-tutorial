@@ -9,6 +9,11 @@ import { UserCreateNestedOneWithoutPostsInput } from "../inputs/UserCreateNested
 })
 export class PostCreateInput {
   @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  id?: string | undefined;
+
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
   title!: string;

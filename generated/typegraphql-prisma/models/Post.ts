@@ -8,10 +8,10 @@ import { User } from "../models/User";
   isAbstract: true
 })
 export class Post {
-  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
-  id!: number;
+  id!: string;
 
   @TypeGraphQL.Field(_type => String, {
     nullable: false
@@ -30,8 +30,8 @@ export class Post {
 
   author?: User;
 
-  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
-  authorId!: number;
+  authorId!: string;
 }

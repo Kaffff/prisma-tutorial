@@ -9,6 +9,11 @@ import { PostCreateNestedManyWithoutAuthorInput } from "../inputs/PostCreateNest
 })
 export class UserCreateInput {
   @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  id?: string | undefined;
+
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
   email!: string;

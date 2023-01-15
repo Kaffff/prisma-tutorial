@@ -2,11 +2,9 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { PostAvgOrderByAggregateInput } from "../inputs/PostAvgOrderByAggregateInput";
 import { PostCountOrderByAggregateInput } from "../inputs/PostCountOrderByAggregateInput";
 import { PostMaxOrderByAggregateInput } from "../inputs/PostMaxOrderByAggregateInput";
 import { PostMinOrderByAggregateInput } from "../inputs/PostMinOrderByAggregateInput";
-import { PostSumOrderByAggregateInput } from "../inputs/PostSumOrderByAggregateInput";
 import { SortOrder } from "../../enums/SortOrder";
 
 @TypeGraphQL.InputType("PostOrderByWithAggregationInput", {
@@ -43,11 +41,6 @@ export class PostOrderByWithAggregationInput {
   })
   _count?: PostCountOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => PostAvgOrderByAggregateInput, {
-    nullable: true
-  })
-  _avg?: PostAvgOrderByAggregateInput | undefined;
-
   @TypeGraphQL.Field(_type => PostMaxOrderByAggregateInput, {
     nullable: true
   })
@@ -57,9 +50,4 @@ export class PostOrderByWithAggregationInput {
     nullable: true
   })
   _min?: PostMinOrderByAggregateInput | undefined;
-
-  @TypeGraphQL.Field(_type => PostSumOrderByAggregateInput, {
-    nullable: true
-  })
-  _sum?: PostSumOrderByAggregateInput | undefined;
 }
